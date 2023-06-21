@@ -60,7 +60,7 @@ class ScriptHandler
             $console .= ' --ansi';
         }
 
-        $process = new Process($php.' '.$console.' '.$cmd, null, null, null, $timeout);
+        $process = new Process([$php.' '.$console.' '.$cmd], null, null, null, $timeout);
         $process->run(function ($type, $buffer) {
             echo $buffer;
         });
